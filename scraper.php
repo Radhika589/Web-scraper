@@ -1,8 +1,8 @@
 <?php
 
  include_once("./simple_html_dom.php");
-
- $html = file_get_html('https://www.domain.com/');
+ $domain = “www.domain.com”
+ $html = file_get_html($domain);
 
  $doc = new DOMDocument();
  @$doc->loadHTML($html);
@@ -26,6 +26,4 @@
  echo "Title: $title". '<br><br/>';
  echo "Description: $description". '<br/><br/>';
  echo "Keywords: $keywords";
-
-
  ?>
