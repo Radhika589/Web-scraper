@@ -2,7 +2,10 @@
 
  include_once("./simple_html_dom.php");
  $domain = “www.domain.com”
- $html = file_get_html($domain);
+ $scraper = new Scraper();
+ $data = $scraper->scrape($domain);
+ print_r($data); // [title, description, author, keywords]
+ $html = file_get_html('https://www.domain.com/');
 
  $doc = new DOMDocument();
  @$doc->loadHTML($html);
@@ -27,3 +30,8 @@
  echo "Description: $description". '<br/><br/>';
  echo "Keywords: $keywords";
  ?>
+
+$domain = “www.domain.com”
+$scraper = new Scraper();
+$data = $scraper->scrape($domain);
+print_r($data); // [title, description, author, keywords]

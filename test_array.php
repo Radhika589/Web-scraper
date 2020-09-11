@@ -9,8 +9,6 @@ $nodes = $doc->getElementsByTagName('title');
 
 $title = $nodes->item(0)->nodeValue;
 
-// Notice how the keys are all lowercase now, and
-// how . was replaced by  in the key.
 if(empty($tags['author']))
    $tags['author'] = "null";
 echo "Title: $title". '<br><br/>';
